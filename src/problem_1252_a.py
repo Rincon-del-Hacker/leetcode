@@ -3,7 +3,7 @@ from typing import List
 
 def problem_1252(m: int, n: int, indices: List[List]):
     matrix = [[0] * n for _ in range(m)]
-    increment_rows(indices, matrix)
+    increment(indices, matrix)
     return count_ods(matrix)
 
 
@@ -29,4 +29,4 @@ def count_ods(matrix):
 
 if __name__ == '__main__':
     assert problem_1252(2, 3, [[0, 1], [1, 1]]) == 6
-    assert problem_1252(2, 2, [[1, 1], [0, 0]]) == 2
+    assert problem_1252(2, 2, [[1, 1], [0, 0]]) == 0
