@@ -2,17 +2,9 @@ from typing import List
 
 class Solution:
     def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
-        set_1 = self.substraction(nums1, nums2)
-        set_2 = self.substraction(nums2, nums1)
-        return [list(set_1), list(set_2)]
-
-    def substraction(self, my_list: List[int], compared: List[int]):
-        my_set = set()
-        for item in my_list:
-            if item not in compared:
-                my_set.add(item)
-
-        return my_set
+        set_1 = set(nums1)
+        set_2 = set(nums2)
+        return [list(set_1 - set_2), list(set_2 - set_1)]
 
 
 if __name__ == '__main__':
